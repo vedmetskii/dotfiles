@@ -1,0 +1,5 @@
+#!/bin/bash
+branches_to_delete=$(git branch | fzf --multi --preview="git log {} --")
+if [ -n "$branches_to_delete" ]; then
+  git branch --delete --force "$branches_to_delete"
+fi
