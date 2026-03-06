@@ -3,7 +3,7 @@ SHELL = /bin/bash
 LINK_COMMAND=bash ./create_link.sh
 
 
-.PHONY: all brew without-brew nvim alacritty bin hypr zsh starship wofi waybar
+.PHONY: all brew without-brew nvim alacritty bin hypr zsh starship rofi waybar zellij
 all: without-brew
 
 install: brew without-brew
@@ -16,7 +16,7 @@ brew:
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 
-without-brew: nvim alacritty bin hypr wofi waybar starship zsh
+without-brew: nvim alacritty bin hypr rofi waybar starship zellij zsh
 
 nvim:
 	$(LINK_COMMAND) nvim ~/.config/nvim
@@ -30,11 +30,14 @@ bin:
 hypr:
 	$(LINK_COMMAND) hypr ~/.config/hypr
 
-wofi:
-	$(LINK_COMMAND) wofi ~/.config/wofi
+rofi:
+	$(LINK_COMMAND) rofi ~/.config/rofi
 
 waybar:
 	$(LINK_COMMAND) waybar ~/.config/waybar
+
+zellij:
+	$(LINK_COMMAND) zellij ~/.config/zellij
 
 starship:
 	$(LINK_COMMAND) starship ~/.config/starship

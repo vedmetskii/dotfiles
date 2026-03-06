@@ -98,12 +98,7 @@ export FZF_CTRL_R_OPTS="
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -122,6 +117,8 @@ export FZF_CTRL_R_OPTS="
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
+source <(fzf --zsh)
 
 alias ls='eza --icons --git -l -a'
 alias l='eza -l --icons --git'
