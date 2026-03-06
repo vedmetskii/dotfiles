@@ -9,3 +9,5 @@
 --
 
 vim.lsp.enable("clangd")
+
+-- vim.cmd.colorscheme("catppuccin-nvim")

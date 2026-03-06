@@ -1,0 +1,15 @@
+{
+  "niri/language": {
+    "format": " {}",
+    "format-en": "US",
+    "format-ru": "RU",
+    "on-click": "niri msg action keyboard-layout-switch next",
+  },
+  "niri/workspaces": {
+    "format": " {icon} ",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+    },
+  },
+}

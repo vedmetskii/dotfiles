@@ -1,0 +1,16 @@
+{
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "EN",
+    "format-ru": "RU",
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true,
+    "format": " {icon} ",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+    },
+  },
+}

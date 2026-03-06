@@ -36,12 +36,13 @@
 }
 
 #custom-music,
+#language,
+#custom-notification,
 #tray,
 #backlight,
 #clock,
 #battery,
 #pulseaudio,
-#custom-lock,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
@@ -82,19 +83,25 @@
   margin-left: 1rem;
 }
 
+#language {
+  color: @mauve;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#custom-notification {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
 #custom-music {
   color: @mauve;
   border-radius: 1rem;
 }
 
-#custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
-}
-
 #custom-power {
   margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
+  border-radius: 1rem;
   color: @red;
 }
 

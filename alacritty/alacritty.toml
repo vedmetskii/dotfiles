@@ -2,15 +2,15 @@
 padding = { x = 15, y = 15 }
 dynamic_padding = true
 opacity = 0.95
-blur = true
 title = "Alacritty term"
 # startup_mode = "Fullscreen"
+
+[env]
+TERM = "xterm-256color"
 
 [font]
 normal = { family = "MesloLGS Nerd Font" }
 size = 12
-
-# KDE Breeze (Ported from Konsole)
 
 # Default colors
 [colors.primary]
