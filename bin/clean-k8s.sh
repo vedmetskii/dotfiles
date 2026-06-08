@@ -1,3 +1,5 @@
+alias k="kubectl"
+
 get_namespaces() {
   k get ns -o json | jq ".items[0].metadata.name" | awk -F'"' '{print $2}'
 }

@@ -17,3 +17,6 @@ vim.filetype.add({
 vim.g.lazyvim_python_lsp = "pyright"
 
 vim.o.termguicolors = true
+
+vim.o.exrc = true
+vim.o.secure = false
