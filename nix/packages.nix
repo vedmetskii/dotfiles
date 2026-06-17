@@ -12,6 +12,13 @@ let
     htop
     just
   ];
+  latexPackages = with pkgs; [
+    texlive
+  ];
+  javaLangPackages = with pkgs; [
+    javaPackages.compiler.temurin-bin.jdk-26
+    gradle
+  ];
   termUtilsPackages = with pkgs; [
     ripgrep
     stow
@@ -20,7 +27,6 @@ let
     bat
     eza
     fzf
-
   ];
   jsPackages = with pkgs; [
     nodejs
@@ -29,8 +35,6 @@ let
   ];
   gitPackages = with pkgs; [
     git
-    delta
-    jujutsu
   ];
   securitePackages = with pkgs; [
     netcat
@@ -43,22 +47,23 @@ let
   pythonPackages = with pkgs; [
     uv
     python3
+    python3Packages.pytest
   ];
   goPackages = with pkgs; [
     go
   ];
   uiPackages = with pkgs; [
-    alacritty
-    niri
     rofi
+    awww
     waybar
     swaynotificationcenter
     wlogout
   ];
   phpLangPackages = with pkgs; [
-    php
-    phpPackages.composer
+    php82
+    php82Packages.composer
     phpstan
+    php82Packages.php-codesniffer
   ];
   cPackages = with pkgs; [
     gnumake
@@ -94,7 +99,9 @@ in
       ++ devopsPackages
       ++ jsPackages
       ++ fontsPackages
-      ++ aiPackages;
+      ++ aiPackages
+      ++ latexPackages
+      ++ javaLangPackages;
   };
 
 }

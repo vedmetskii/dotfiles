@@ -103,8 +103,7 @@ return {
           offsetEncoding = { "utf-16" },
         },
         cmd = {
-          "/home/linuxbrew/.linuxbrew/bin/clangd",
-          -- "clangd",
+          "clangd",
           "--fallback-style=webkit",
           "--background-index",
           "--clang-tidy",

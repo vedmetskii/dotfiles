@@ -1,5 +1,14 @@
 { _, ... }: {
-
+  programs.delta = {
+    enable = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+      side-by-side = true;
+      theme = "Dracula";
+    };
+    enableGitIntegration = true;
+  };
   programs.git = {
     enable = true;
     lfs.enable = true;
