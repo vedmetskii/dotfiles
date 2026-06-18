@@ -1,7 +1,0 @@
-flatpak "app.zen_browser.zen"
-flatpak "com.github.tchx84.Flatseal"
-flatpak "md.obsidian.Obsidian"
-flatpak "org.gnome.Connections"
-flatpak "org.keepassxc.KeePassXC"
-flatpak "org.onlyoffice.desktopeditors"
-flatpak "org.telegram.desktop"

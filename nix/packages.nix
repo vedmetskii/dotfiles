@@ -11,9 +11,10 @@ let
     starship
     htop
     just
+    flatpak
   ];
   latexPackages = with pkgs; [
-    texlive
+    texliveSmall
   ];
   javaLangPackages = with pkgs; [
     javaPackages.compiler.temurin-bin.jdk-26
