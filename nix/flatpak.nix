@@ -13,6 +13,10 @@
       "org.telegram.desktop"
       "org.gnome.Loupe"
       "com.heroicgameslauncher.hgl"
+      "org.blender.Blender"
+      "org.gnome.Totem"
+      "us.zoom.Zoom"
+      "menu.kando.Kando"
     ];
     remotes = [
       {

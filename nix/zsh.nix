@@ -24,6 +24,11 @@
       eval "$(starship init zsh)"
       eval "$(zoxide init zsh --cmd cd)"
       source <(fzf --zsh)
+      source <(glab completion -s zsh)
+      if [ -f "$HOME/.config/secrets/.env" ]; then
+        source "$HOME/.config/secrets/.env"
+      fi
+      export LD_LIBRARY_PATH="${pkgs.libGL}/lib:$LD_LIBRARY_PATH"
     '';
     shellAliases = {
       # ls
@@ -31,7 +36,7 @@
       lt = "eza -long --tree --icons --git";
 
       # Update zsh config
-      upzsh = "source ~/.zshrc";
+      upzsh = "source ~/.config/zsh/.zshrc";
 
       # NeoVim
       n = "nvim";

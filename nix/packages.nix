@@ -5,9 +5,12 @@
 let
   llvmPkgs = pkgs.llvmPackages_18;
   corePackages = with pkgs; [
+    # agentix
     zsh
     neovim
     zellij
+    fastfetch
+    onefetch
     starship
     htop
     just
@@ -36,18 +39,28 @@ let
   ];
   gitPackages = with pkgs; [
     git
+    glab
   ];
   securitePackages = with pkgs; [
     netcat
     nmap
+    clamav
+    # dirhunt
+    gobuster
+    hadolint
+    trivy
+    ghidra
   ];
   devopsPackages = with pkgs; [
-    helm
+    # helm
+    argocd
+    opentofu
     terraform
   ];
   pythonPackages = with pkgs; [
     uv
     python3
+    # (python3.withPackages (ps: ps.dirhunt))
     python3Packages.pytest
   ];
   goPackages = with pkgs; [
@@ -61,10 +74,10 @@ let
     wlogout
   ];
   phpLangPackages = with pkgs; [
-    php82
-    php82Packages.composer
+    php83
+    php83Packages.composer
     phpstan
-    php82Packages.php-codesniffer
+    php83Packages.php-codesniffer
   ];
   cPackages = with pkgs; [
     gnumake

@@ -5,6 +5,10 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +20,7 @@
       nixpkgs,
       home-manager,
       nix-flatpak,
+      agenix,
       ...
     }:
     let
@@ -38,6 +43,7 @@
 
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
+          agenix.homeManagerModules.default
           ./nix/home.nix
         ];
       };

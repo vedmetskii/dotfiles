@@ -12,6 +12,8 @@
       ".config/wlogout".source = ../wlogout;
       ".config/waybar".source = ../waybar;
       ".config/niri".source = ../niri;
+      ".config/niri-quickshell".source = ../niri-quickshell;
+      ".config/secrets".source = ../secrets;
       "/.local/share/bin".source = ../bin;
     };
   };

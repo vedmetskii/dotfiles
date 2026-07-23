@@ -22,6 +22,9 @@
         name = "Kirill Vedmetskii";
         email = "kirik@kirill-vedmetskii.ru";
       };
+      init.defaultBranch = "main";
+      pull.rebase = true;
+      core.editor = "nvim";
     };
 
     # includes = [

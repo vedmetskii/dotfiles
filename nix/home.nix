@@ -1,5 +1,6 @@
 {
   username,
+  pkgs,
   ...
 }:
 
@@ -23,6 +24,7 @@
       EDITOR = "nvim";
       STARSHIP_CONFIG = "~/.config/starship/starship.toml";
       PATH = "$PATH:$HOME/.local/share/bin:$HOME/.local/bin";
+      # CMAKE_PREFIX_PATH = "${pkgs.qt6.qtbase.dev}";
     };
   };
 
