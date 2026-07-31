@@ -1,5 +1,7 @@
 {
   pkgs,
+  tuicr,
+  system,
   ...
 }:
 let
@@ -24,6 +26,7 @@ let
     gradle
   ];
   termUtilsPackages = with pkgs; [
+    # cmatrix
     ripgrep
     stow
     yq
@@ -71,6 +74,7 @@ let
     awww
     waybar
     swaynotificationcenter
+    kando
     wlogout
   ];
   phpLangPackages = with pkgs; [
@@ -95,10 +99,13 @@ let
   aiPackages = with pkgs; [
     opencode
   ];
+  additionsPackagesFromFlakes = [
+    tuicr.packages.${system}.default
+
+  ];
 in
 {
   home = {
-
     packages =
       corePackages
       ++ cPackages
@@ -115,7 +122,8 @@ in
       ++ fontsPackages
       ++ aiPackages
       ++ latexPackages
-      ++ javaLangPackages;
+      ++ javaLangPackages
+      ++ additionsPackagesFromFlakes;
   };
 
 }

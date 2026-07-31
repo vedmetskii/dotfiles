@@ -13,6 +13,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tuicr = {
+      url = "github:agavra/tuicr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +25,7 @@
       home-manager,
       nix-flatpak,
       agenix,
+      tuicr,
       ...
     }:
     let
@@ -38,7 +43,9 @@
         inherit pkgs;
 
         extraSpecialArgs = {
+          inherit system;
           inherit username;
+          inherit tuicr;
         };
 
         modules = [

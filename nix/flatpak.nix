@@ -16,7 +16,8 @@
       "org.blender.Blender"
       "org.gnome.Totem"
       "us.zoom.Zoom"
-      "menu.kando.Kando"
+      "org.mozilla.Thunderbird"
+      "org.gnome.NetworkDisplays"
     ];
     remotes = [
       {

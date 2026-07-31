@@ -62,8 +62,8 @@ window-rule {
 window-rule {
     match app-id="menu.kando.Kando"
     open-floating true
-    focus-ring { off }
-    border { off }
-    shadow { off }
+    focus-ring { off; }
+    border { off; }
+    shadow { off; }
     default-floating-position x=0 y=0
 }

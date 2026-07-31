@@ -49,6 +49,8 @@
       hms = "home-manager switch";
       hmbf = "home-manager build --flake .";
       hmsf = "home-manager switch --flake .";
+
+      ssh-config = "nvim ~/.ssh/";
     };
     oh-my-zsh = {
       enable = true;
