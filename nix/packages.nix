@@ -55,7 +55,8 @@ let
     dive
   ];
   devopsPackages = with pkgs; [
-    helm
+    kubernetes-helm
+    helmfile
     argocd
     opentofu
     terraform

@@ -5,6 +5,7 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nixgl.url = "github:nix-community/nixGL";
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +22,9 @@
 
   outputs =
     {
+      self,
       nixpkgs,
+      nixgl,
       home-manager,
       nix-flatpak,
       agenix,
@@ -35,10 +38,15 @@
         config = {
           allowUnfree = true;
         };
+        overlays = [
+          self.overlays.default
+          nixgl.overlay
+        ];
       };
       username = "kirill";
     in
     {
+      overlays.default = ./overlay.nix;
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
