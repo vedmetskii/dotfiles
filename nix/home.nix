@@ -1,6 +1,5 @@
 {
   username,
-  pkgs,
   ...
 }:
 
@@ -12,6 +11,7 @@
     ./env.nix
     ./git.nix
     ./flatpak.nix
+    ./starship.nix
   ];
   home = {
     # Home Manager needs a bit of information about you and the paths it should
@@ -22,7 +22,6 @@
     stateVersion = "26.05"; # Please read the comment before changing.
     sessionVariables = {
       EDITOR = "nvim";
-      STARSHIP_CONFIG = "~/.config/starship/starship.toml";
       PATH = "$PATH:$HOME/.local/share/bin:$HOME/.local/bin";
     };
   };
