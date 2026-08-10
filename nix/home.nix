@@ -20,10 +20,6 @@
     homeDirectory = "/home/${username}";
 
     stateVersion = "26.05"; # Please read the comment before changing.
-    sessionVariables = {
-      EDITOR = "nvim";
-      PATH = "$PATH:$HOME/.local/share/bin:$HOME/.local/bin";
-    };
   };
 
   fonts.fontconfig.enable = true;
