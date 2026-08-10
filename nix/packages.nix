@@ -7,7 +7,6 @@
 let
   llvmPkgs = pkgs.llvmPackages_18;
   corePackages = with pkgs; [
-    # agentix
     zsh
     neovim
     zellij
@@ -26,7 +25,6 @@ let
     gradle
   ];
   termUtilsPackages = with pkgs; [
-    # cmatrix
     ripgrep
     stow
     yq
@@ -43,19 +41,21 @@ let
   gitPackages = with pkgs; [
     git
     glab
+    gh
+    jujutsu
   ];
   securitePackages = with pkgs; [
     netcat
     nmap
     clamav
-    # dirhunt
     gobuster
     hadolint
     trivy
     ghidra
+    dive
   ];
   devopsPackages = with pkgs; [
-    # helm
+    helm
     argocd
     opentofu
     terraform
@@ -63,7 +63,6 @@ let
   pythonPackages = with pkgs; [
     uv
     python3
-    # (python3.withPackages (ps: ps.dirhunt))
     python3Packages.pytest
   ];
   goPackages = with pkgs; [
@@ -98,6 +97,7 @@ let
   ];
   aiPackages = with pkgs; [
     opencode
+    llama-cpp
   ];
   additionsPackagesFromFlakes = [
     tuicr.packages.${system}.default
@@ -125,5 +125,4 @@ in
       ++ javaLangPackages
       ++ additionsPackagesFromFlakes;
   };
-
 }

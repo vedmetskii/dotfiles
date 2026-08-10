@@ -3,7 +3,5 @@
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "waybar"
-spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "nm-applet —indicator"
-spawn-sh-at-startup "flatpak run menu.kando.Kando"
+spawn-at-startup "noctalia"
+spawn-at-startup "kando"
