@@ -69,12 +69,7 @@ let
     go
   ];
   uiPackages = with pkgs; [
-    rofi
-    awww
-    waybar
-    swaynotificationcenter
     kando
-    wlogout
   ];
   phpLangPackages = with pkgs; [
     php83
@@ -101,7 +96,6 @@ let
   ];
   additionsPackagesFromFlakes = [
     tuicr.packages.${system}.default
-
   ];
 in
 {

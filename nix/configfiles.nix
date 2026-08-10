@@ -5,8 +5,7 @@
       "wallpapers".source = ../wallpapers;
       ".config/nvim".source = ../nvim;
       ".config/zellij".source = ../zellij;
-      # ".config/starship".source = ../starship;
-      ".config/rofi".source = ../rofi;
+      "~/.local/share/rofi/themes".source = ../rofi-themes;
       ".config/alacritty".source = ../alacritty;
       ".config/niri".source = ../niri;
       "/.local/share/bin".source = ../bin;
