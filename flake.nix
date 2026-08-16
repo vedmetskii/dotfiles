@@ -6,18 +6,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixgl.url = "github:nix-community/nixGL";
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tuicr = {
-      url = "github:agavra/tuicr";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    tuicr.url = "github:agavra/tuicr";
     jj-starship = {
       url = "github:dmmulroy/jj-starship";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +24,6 @@
       nixgl,
       home-manager,
       nix-flatpak,
-      agenix,
       tuicr,
       jj-starship,
       ...
@@ -64,7 +56,6 @@
 
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
-          agenix.homeManagerModules.default
           ./nix/home.nix
         ];
       };
