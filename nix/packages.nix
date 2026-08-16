@@ -43,6 +43,7 @@ let
     glab
     gh
     jujutsu
+    jj-starship
   ];
   securitePackages = with pkgs; [
     netcat
@@ -51,10 +52,10 @@ let
     gobuster
     hadolint
     trivy
-    ghidra
     dive
   ];
   devopsPackages = with pkgs; [
+    k6
     kubernetes-helm
     helmfile
     argocd
@@ -90,6 +91,7 @@ let
   ];
   fontsPackages = with pkgs; [
     nerd-fonts.meslo-lg
+    corefonts
   ];
   aiPackages = with pkgs; [
     opencode

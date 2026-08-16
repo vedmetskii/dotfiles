@@ -18,6 +18,7 @@
       "us.zoom.Zoom"
       "org.mozilla.Thunderbird"
       "org.gnome.NetworkDisplays"
+      "org.ghidra_sre.Ghidra"
     ];
     remotes = [
       {

@@ -18,6 +18,10 @@
       url = "github:agavra/tuicr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jj-starship = {
+      url = "github:dmmulroy/jj-starship";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -29,6 +33,7 @@
       nix-flatpak,
       agenix,
       tuicr,
+      jj-starship,
       ...
     }:
     let
@@ -39,14 +44,15 @@
           allowUnfree = true;
         };
         overlays = [
-          self.overlays.default
           nixgl.overlay
+          jj-starship.overlays.default
+          self.overlays.default
         ];
       };
       username = "kirill";
     in
     {
-      overlays.default = ./overlay.nix;
+      overlays.default = import ./overlay.nix;
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
