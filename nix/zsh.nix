@@ -29,11 +29,17 @@
         source "$HOME/.config/secrets/.env"
       fi
       export LD_LIBRARY_PATH="${pkgs.libGL}/lib:$LD_LIBRARY_PATH"
+      source ~/.env_vars
     '';
     shellAliases = {
       # ls
       ls = "eza --icons --git";
       lt = "eza -long --tree --icons --git";
+
+      j = "just";
+
+      zellij = "zellij attach --create main";
+      z = "zellij";
 
       # Update zsh config
       upzsh = "source ~/.config/zsh/.zshrc";
@@ -57,10 +63,14 @@
       plugins = [
         "terraform"
         "git"
-        "z"
+        # "z"
         "helm"
         "jj"
         "kubectl"
+        "eza"
+        "yii2"
+        "podman"
+        "vi-mode"
       ];
     };
   };

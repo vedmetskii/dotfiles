@@ -4,8 +4,8 @@
 --
 
 vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = true,
+  -- virtual_text = false,
+  virtual_lines = false,
 })
 
 vim.filetype.add({
@@ -14,7 +14,7 @@ vim.filetype.add({
   },
 })
 
-vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_lsp = "python"
 
 vim.o.termguicolors = true
 

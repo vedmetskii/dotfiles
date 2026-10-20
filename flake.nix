@@ -52,6 +52,7 @@
           inherit system;
           inherit username;
           inherit tuicr;
+          inherit nixgl;
         };
 
         modules = [

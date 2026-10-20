@@ -19,6 +19,9 @@
       "org.mozilla.Thunderbird"
       "org.gnome.NetworkDisplays"
       "org.ghidra_sre.Ghidra"
+      "org.kde.krita"
+      "org.gnome.font-viewer"
+      "app.xmcl.voxelum"
     ];
     remotes = [
       {

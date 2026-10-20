@@ -2,6 +2,7 @@
   pkgs,
   tuicr,
   system,
+  nixgl,
   ...
 }:
 let
@@ -21,8 +22,11 @@ let
     texliveSmall
   ];
   javaLangPackages = with pkgs; [
-    javaPackages.compiler.temurin-bin.jdk-26
+    # javaPackages.compiler.temurin-bin.jdk-26
+    javaPackages.compiler.temurin-bin.jdk-17
     gradle
+    jdt-language-server
+    lombok
   ];
   termUtilsPackages = with pkgs; [
     ripgrep
@@ -37,6 +41,9 @@ let
     nodejs
     pnpm
     yarn
+    vtsls
+    typescript-language-server
+    typescript
   ];
   gitPackages = with pkgs; [
     git
@@ -61,23 +68,39 @@ let
     argocd
     opentofu
     terraform
+    podman
+    podman-compose
+    skopeo
+    container-structure-test
+    httpie
+    ansible
   ];
   pythonPackages = with pkgs; [
     uv
+    ruff
     python3
     python3Packages.pytest
+    mypy
   ];
   goPackages = with pkgs; [
     go
   ];
   uiPackages = with pkgs; [
     kando
+    networkmanagerapplet
+    (alacritty.overrideAttrs (oldAttrs: {
+      preInstall = ''
+        substituteInPlace extra/linux/Alacritty.desktop \
+        --replace 'Exec=alacritty' 'Exec=nixGL alacritty'
+      '';
+    }))
   ];
   phpLangPackages = with pkgs; [
-    php83
-    php83Packages.composer
+    php82
+    php82Packages.composer
     phpstan
-    php83Packages.php-codesniffer
+    php82Packages.php-codesniffer
+    phpantom-lsp
   ];
   cPackages = with pkgs; [
     gnumake
@@ -91,6 +114,7 @@ let
   ];
   fontsPackages = with pkgs; [
     nerd-fonts.meslo-lg
+    nerd-fonts.fira-code
     corefonts
   ];
   aiPackages = with pkgs; [
@@ -99,6 +123,9 @@ let
   ];
   additionsPackagesFromFlakes = [
     tuicr.packages.${system}.default
+  ];
+  idePackages = with pkgs; [
+    vscode
   ];
 in
 {
@@ -120,6 +147,7 @@ in
       ++ aiPackages
       ++ latexPackages
       ++ javaLangPackages
+      ++ idePackages
       ++ additionsPackagesFromFlakes;
   };
 }

@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ _, ... }:
 {
   programs.alacritty = {
     enable = true;
-    package = pkgs.alacritty-graphics;
     settings = {
       window = {
         padding = {
@@ -11,12 +10,18 @@
         };
         dynamic_padding = true;
         opacity = 0.95;
-        title = "Alacritty term";
+        # title = "Alacritty term";
+        decorations = "None";
+      };
+
+      env = {
+        TERM = "xterm-256color";
       };
 
       font = {
         normal = {
           family = "MesloLGS Nerd Font";
+          # family = "FiraCode Nerd Font";
         };
         size = 12;
       };

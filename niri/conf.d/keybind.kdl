@@ -14,7 +14,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn-sh "nixGL alacritty"; }
     Mod+B hotkey-overlay-title="Open a Browser: Zen" { spawn-sh "flatpak run app.zen_browser.zen"; }
     Mod+E hotkey-overlay-title="Open a File Manager: Nautilus" { spawn "nautilus"; }
     Mod+R hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'window,drun,run,calc' -show-icons -icon-theme 'Papirus'"; }

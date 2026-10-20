@@ -11,6 +11,27 @@ return {
           executable = "latexmk",
         },
       },
+      tailwindcss = {
+        filetypes_include = {
+          "javascriptreact",
+          "javascript.jsx",
+          "typescriptreact",
+          "typescript.tsx",
+          "vue",
+          "css",
+          "astro",
+        },
+      },
+      php = {
+        cmd = { "phpantom_lsp" },
+        filetypes = { "php" },
+        root_markers = { ".phpantom.toml", "composer.json" },
+      },
+      pyright = {
+        filetypes = { "python" },
+        cmd = { "pyright-langserver", "--stdio" },
+        root_markers = { "pyproject.toml", ".venv" },
+      },
       ruff = {
         filetypes = { "python" },
         cmd = {
@@ -32,24 +53,25 @@ return {
         init_options = {
           settings = {
             logLevel = "error",
+            lint = {
+              preview = true,
+              select = { "ALL" },
+              ignore = { "A003", "D", "COM812", "S101" },
+            },
+            format = {
+              preview = true,
+              backend = "uv",
+            },
           },
         },
-        keys = {
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-        },
-      },
-      ruff_lsp = {
-        keys = {
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-        },
+        -- keys = {
+        --   {
+        --     "<leader>co",
+        --     LazyVim.lsp.action["source.organizeImports"],
+        --     desc = "Organize Imports",
+        --   },
+        -- },
+        root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
       },
       emmet_ls = {},
       html = {},

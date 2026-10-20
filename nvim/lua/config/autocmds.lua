@@ -9,5 +9,7 @@
 --
 
 vim.lsp.enable("clangd")
+vim.lsp.enable("ruff")
+vim.lsp.enable("pyright")
 
 -- vim.cmd.colorscheme("catppuccin-nvim")
