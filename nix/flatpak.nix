@@ -22,6 +22,7 @@
       "org.kde.krita"
       "org.gnome.font-viewer"
       "app.xmcl.voxelum"
+      "com.jgraph.drawio.desktop"
     ];
     remotes = [
       {

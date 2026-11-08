@@ -15,6 +15,10 @@
       url = "github:dmmulroy/jj-starship";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-float-sticky = {
+      url = "github:probeldev/niri-float-sticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -26,6 +30,7 @@
       nix-flatpak,
       tuicr,
       jj-starship,
+      niri-float-sticky,
       ...
     }:
     let
@@ -53,6 +58,7 @@
           inherit username;
           inherit tuicr;
           inherit nixgl;
+          inherit niri-float-sticky;
         };
 
         modules = [

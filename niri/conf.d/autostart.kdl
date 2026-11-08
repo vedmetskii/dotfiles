@@ -5,3 +5,4 @@
 
 spawn-at-startup "noctalia"
 spawn-at-startup "kando"
+spawn-at-startup "niri-float-sticky"

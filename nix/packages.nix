@@ -2,11 +2,18 @@
   pkgs,
   tuicr,
   system,
-  nixgl,
+  niri-float-sticky,
   ...
 }:
 let
   llvmPkgs = pkgs.llvmPackages_18;
+  virtPackages = with pkgs; [
+    qemu
+    quickemu
+    qemu_kvm
+    gnome-boxes
+    virt-manager
+  ];
   corePackages = with pkgs; [
     zsh
     neovim
@@ -23,7 +30,7 @@ let
   ];
   javaLangPackages = with pkgs; [
     # javaPackages.compiler.temurin-bin.jdk-26
-    javaPackages.compiler.temurin-bin.jdk-17
+    jdk8
     gradle
     jdt-language-server
     lombok
@@ -87,13 +94,6 @@ let
   ];
   uiPackages = with pkgs; [
     kando
-    networkmanagerapplet
-    (alacritty.overrideAttrs (oldAttrs: {
-      preInstall = ''
-        substituteInPlace extra/linux/Alacritty.desktop \
-        --replace 'Exec=alacritty' 'Exec=nixGL alacritty'
-      '';
-    }))
   ];
   phpLangPackages = with pkgs; [
     php82
@@ -123,6 +123,7 @@ let
   ];
   additionsPackagesFromFlakes = [
     tuicr.packages.${system}.default
+    niri-float-sticky.packages.${system}.default
   ];
   idePackages = with pkgs; [
     vscode
@@ -132,6 +133,7 @@ in
   home = {
     packages =
       corePackages
+      ++ virtPackages
       ++ cPackages
       ++ phpLangPackages
       ++ termUtilsPackages
