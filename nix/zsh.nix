@@ -23,6 +23,7 @@
     initContent = ''
       eval "$(starship init zsh)"
       eval "$(zoxide init zsh --cmd cd)"
+      eval "$(direnv hook zsh)"
       source <(fzf --zsh)
       source <(glab completion -s zsh)
       if [ -f "$HOME/.config/secrets/.env" ]; then

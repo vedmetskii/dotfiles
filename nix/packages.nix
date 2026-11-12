@@ -24,6 +24,7 @@ let
     htop
     just
     flatpak
+    direnv
   ];
   latexPackages = with pkgs; [
     texliveSmall
@@ -96,10 +97,10 @@ let
     kando
   ];
   phpLangPackages = with pkgs; [
-    php82
-    php82Packages.composer
+    php85
+    php85Packages.composer
     phpstan
-    php82Packages.php-codesniffer
+    php85Packages.php-codesniffer
     phpantom-lsp
   ];
   cPackages = with pkgs; [
