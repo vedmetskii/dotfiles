@@ -58,6 +58,10 @@
       hmsf = "home-manager switch --flake .";
 
       ssh-config = "nvim ~/.ssh/";
+
+      # nix
+      nb = "nix build";
+      nd = "nix develop -c $SHELL";
     };
     oh-my-zsh = {
       enable = true;

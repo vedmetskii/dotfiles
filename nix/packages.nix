@@ -3,6 +3,8 @@
   tuicr,
   system,
   niri-float-sticky,
+  openlogi,
+  deadband,
   ...
 }:
 let
@@ -25,6 +27,7 @@ let
     just
     flatpak
     direnv
+    plantuml
   ];
   latexPackages = with pkgs; [
     texliveSmall
@@ -108,10 +111,14 @@ let
     clang
     llvmPkgs.clang-tools
     cmake
+    hpp2plantuml
   ];
   rustPackages = with pkgs; [
     rustc
     rustup
+  ];
+  zigPackages = with pkgs; [
+    zig
   ];
   fontsPackages = with pkgs; [
     nerd-fonts.meslo-lg
@@ -125,6 +132,8 @@ let
   additionsPackagesFromFlakes = [
     tuicr.packages.${system}.default
     niri-float-sticky.packages.${system}.default
+    openlogi.packages.${system}.default
+    deadband.packages.${system}.default
   ];
   idePackages = with pkgs; [
     vscode
@@ -146,6 +155,7 @@ in
       ++ securitePackages
       ++ devopsPackages
       ++ jsPackages
+      ++ zigPackages
       ++ fontsPackages
       ++ aiPackages
       ++ latexPackages

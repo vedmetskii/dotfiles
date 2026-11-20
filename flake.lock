@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "deadband": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "upstream-src": "upstream-src"
+      },
+      "locked": {
+        "lastModified": 1788391522,
+        "narHash": "sha256-gwCv/WyX9/aqS96dl4FrHWHhJNeOhEYlSjsja3APi10=",
+        "ref": "refs/heads/master",
+        "rev": "69801573f26436ecd1e24b077489142c217c761b",
+        "revCount": 7,
+        "type": "git",
+        "url": "https://codeberg.org/Epaphroditus/gamesir-linux-tools-nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/Epaphroditus/gamesir-linux-tools-nix"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -231,14 +252,39 @@
         "type": "github"
       }
     },
+    "openlogi": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "dir": "packaging",
+        "lastModified": 1794485966,
+        "narHash": "sha256-kXdhOcXaTH/ScAcPVZU+v3EV0RSZ1emTSysiBTp5kZ0=",
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "rev": "9ca7ef0cbd1f4577ffdc338f8288f8c3a410f013",
+        "type": "github"
+      },
+      "original": {
+        "dir": "packaging",
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "deadband": "deadband",
         "home-manager": "home-manager",
         "jj-starship": "jj-starship",
         "niri-float-sticky": "niri-float-sticky",
         "nix-flatpak": "nix-flatpak",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs",
+        "openlogi": "openlogi",
         "tuicr": "tuicr"
       }
     },
@@ -256,6 +302,27 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "openlogi",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792219666,
+        "narHash": "sha256-RMO08tKD+hFIL5ryWi85VY4aHE5oIpdV1h4kVFctOkw=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "a110337465cfb76e3806b81b9db3094c3e6e770a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },
@@ -336,6 +403,22 @@
       "original": {
         "owner": "agavra",
         "repo": "tuicr",
+        "type": "github"
+      }
+    },
+    "upstream-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788371882,
+        "narHash": "sha256-LZBb6FAIkUFSGrFfxznj9A/HcTa+r6lQTBbGmBB7qjE=",
+        "owner": "broroeror",
+        "repo": "gamesir-linux-tools",
+        "rev": "095c46d6c400971d52275dfed10d6b7fc1fcd1d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "broroeror",
+        "repo": "gamesir-linux-tools",
         "type": "github"
       }
     },

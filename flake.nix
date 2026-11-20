@@ -24,6 +24,14 @@
       url = "github:probeldev/niri-float-sticky";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    openlogi = {
+      url = "github:AprilNEA/OpenLogi?dir=packaging";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    deadband = {
+      url = "git+https://codeberg.org/Epaphroditus/gamesir-linux-tools-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -36,6 +44,8 @@
       tuicr,
       jj-starship,
       niri-float-sticky,
+      openlogi,
+      deadband,
       ...
     }:
     let
@@ -64,6 +74,8 @@
           inherit tuicr;
           inherit nixgl;
           inherit niri-float-sticky;
+          inherit openlogi;
+          inherit deadband;
         };
 
         modules = [

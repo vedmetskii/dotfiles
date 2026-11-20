@@ -23,6 +23,8 @@
       "org.gnome.font-viewer"
       "app.xmcl.voxelum"
       "com.jgraph.drawio.desktop"
+      "io.qt.Designer"
+      "org.libreoffice.LibreOffice"
     ];
     remotes = [
       {
